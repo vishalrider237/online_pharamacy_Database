@@ -1,2 +1,9 @@
-# online_pharamacy_Database
-After Database is created ,I have connected with python to perform different operation on tables like Describing table,displaying users from table,insertion of new data into table,deletion of data,updation of data into table.
+ # online_pharamacy_Database#
+
+
+First i have prepared ER model for online_pharamacy.
+And then converted ER model to Relational model and normalize our table.
+And implemented this Relational model in MYSQL commandline prompt.
+And then used python language for database connectivity. and did CRUD operation on each and every
+table in my database using python.
+
