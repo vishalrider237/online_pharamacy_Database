@@ -1,6 +1,6 @@
 import mysql.connector
 import mysql.connector as c
-
+import pandas as pd
 
 class MyProject:
     def __init__(self):
@@ -9,11 +9,13 @@ class MyProject:
         query1 = 'show tables'
         cur = self.con.cursor()
         cur.execute(query1)
-        list = []
-        for row in cur:
-            list.append(row)
-        print(list)
-        print()
+        df=pd.DataFrame(cur.fetchall(),columns=['Tables_in_Online_Pharmacy'])
+        print(df)
+      #  list = []
+      #  for row in cur:
+     #       list.append(row)
+     #   print(list)
+     #   print()
 
              ######TABLE USER_REGISTRATION########
 
@@ -23,9 +25,12 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
             print()
+            df=pd.DataFrame(cur.fetchall(),columns=['Field','Type','Null','Key','Default','Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -41,16 +46,19 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("S_number",":",row[0])
-                print("Id",":",row[1])
-                print("Name",":",row[2])
-                print("Gender",":",row[3])
-                print("Password",":",row[4])
-                print("Phone_no",":",row[5])
-                print("Age",":",row[6])
-                print("E_mail",":",row[7])
-                print()
+            df=pd.DataFrame(cur.fetchall(),columns=['s_no','id','name','gender','password','ph_no','age','E_mail'])
+            print(df)
+         #   for row in cur:
+         #       print("S_number",":",row[0])
+         #       print("Id",":",row[1])
+         #       print("Name",":",row[2])
+         #       print("Gender",":",row[3])
+         #       print("Password",":",row[4])
+         #       print("Phone_no",":",row[5])
+         #       print("Age",":",row[6])
+         #       print("E_mail",":",row[7])
+               # print()
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -124,9 +132,11 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -142,15 +152,19 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("M_number",":",row[0])
-                print("Name",":",row[1])
-                print("M_id",":",row[2])
-                print("Amount",":",row[3])
-                print("Expiry",":",row[4])
-                print("Manufacture",":",row[5])
-                print("Purpose",":",row[6])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['m_no', 'name', 'm_id', 'amount', 'expiry', 'manufacture', 'purpose'])
+            print(df)
+          #  for row in cur:
+          #      print("M_number",":",row[0])
+          #      print("Name",":",row[1])
+          #      print("M_id",":",row[2])
+          #      print("Amount",":",row[3])
+          #      print("Expiry",":",row[4])
+          #      print("Manufacture",":",row[5])
+          #      print("Purpose",":",row[6])
+             #   print()
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -222,9 +236,11 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+         #   for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -240,13 +256,10 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("P_number",":",row[0])
-                print("Pur_number",":",row[1])
-                print("amount",":",row[2])
-                print("Discount",":",row[3])
-                print("Total_amount",":",row[4])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['p_num', 'pur_no', 'amount', 'discount', 'total_amount'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -318,9 +331,11 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -336,13 +351,10 @@ class MyProject:
             print(query)
             cur=self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("D_number",":",row[0])
-                print("Name",":",row[1])
-                print("Specilyst",":",row[2])
-                print("Phone_no",":",row[3])
-                print("Address",":",row[4])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['d_num', 'name', 'specialist', 'ph_no', 'address'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -413,9 +425,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+         #   for row in cur:
+         #       print(row)
+         #   print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -431,11 +445,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("Order_no", ":", row[0])
-                print("user_id", ":", row[1])
-                print("Cancellation_no", ":", row[2])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['o_num', 'user_id', 'can_no'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -507,9 +520,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -525,11 +540,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("Bill_no", ":", row[0])
-                print("Order_no", ":", row[1])
-                print("Total_amt", ":", row[2])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['bill_no', 'ord_no', 'total_amt'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -601,9 +615,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -619,13 +635,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("S_code", ":", row[0])
-                print("S_num", ":", row[1])
-                print("Name", ":", row[2])
-                print("E_mail", ":", row[3])
-                print("Ph_no", ":", row[4])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['s_code', 's_num', 'name', 'E_mail', 'ph_no'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -697,9 +710,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -715,10 +730,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("Id", ":", row[0])
-                print("M_id", ":", row[1])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['id', 'm_id'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -790,9 +805,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+           # for row in cur:
+           #     print(row)
+           # print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -808,10 +825,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("pur_no", ":", row[0])
-                print("M_id", ":", row[1])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['pur_no', 'm_id'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -884,9 +901,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -902,10 +921,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("pur_no", ":", row[0])
-                print("Can_no", ":", row[1])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['pur_no', 'can_no'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -977,9 +996,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -995,10 +1016,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("pur_no", ":", row[0])
-                print("Order_no", ":", row[1])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['pur_no', 'ord_no'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -1070,9 +1091,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+          #  for row in cur:
+          #      print(row)
+          #  print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -1088,10 +1111,10 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print("O_number", ":", row[0])
-                print("S_code", ":", row[1])
-                print()
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['o_no', 's_code'])
+            print(df)
+            print()
             print("Read table successfully")
 
         except mysql.connector.Error as error:
@@ -1163,9 +1186,11 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
-            for row in cur:
-                print(row)
-            print()
+            df = pd.DataFrame(cur.fetchall(), columns=['Field', 'Type', 'Null', 'Key', 'Default', 'Extra'])
+            print(df)
+           # for row in cur:
+           #     print(row)
+           # print()
         except mysql.connector.Error as error:
             print("Failed to describe table mysql {}".format(error))
         finally:
@@ -1181,6 +1206,9 @@ class MyProject:
             print(query)
             cur = self.con.cursor()
             cur.execute(query)
+            df = pd.DataFrame(cur.fetchall(),
+                              columns=['m_id', 'd_num'])
+            print(df)
             for row in cur:
                 print("M_id", ":", row[0])
                 print("D_num", ":", row[1])
