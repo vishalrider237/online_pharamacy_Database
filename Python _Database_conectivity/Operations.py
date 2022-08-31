@@ -6,11 +6,11 @@ from SqlOperation import MyProject
 def Main():
 
     while (True):
-        print("***********All TABLES OF THIS DATABASE*************")
+     #   print("***********All TABLES OF THIS DATABASE*************")
         Object=MyProject()
         print()
         table = int(input('plz enter the table number which you want to perform operation: '))
-        if (table == 13):
+        if (table == 12):
 
             print('press 1 to describe table:')
             print('press 2 to insert new user')
@@ -59,7 +59,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==10):
+        elif(table==3):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -105,7 +105,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==11):
+        elif(table==4):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -145,7 +145,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==9):
+        elif(table==2):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -185,7 +185,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==8):
+        elif(table==1):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -223,7 +223,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==7):
+        elif(table==0):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -261,7 +261,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==12):
+        elif(table==11):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -303,7 +303,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==1):
+        elif(table==5):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -339,7 +339,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==2):
+        elif(table==6):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -375,7 +375,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==3):
+        elif(table==7):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -411,7 +411,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==4):
+        elif(table==8):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -447,7 +447,7 @@ def Main():
             except mysql.MyProject as error:
                 print("Failed".format(error))
 
-        elif(table==5):
+        elif(table==9):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
@@ -484,7 +484,7 @@ def Main():
                 print("Failed".format(error))
 
 
-        elif(table==6):
+        elif(table==10):
             print('press 1 to describe table:')
             print('press 2 to insert new user')
             print('press 3 to display all user')
